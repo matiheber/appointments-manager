@@ -5,6 +5,10 @@ const Form = ({ patients, setPatients, patient }) => {
   const [patientData, setPatientData] = useState({});
   const [error, setError] = useState(false);
 
+  useEffect(()=> {
+    
+  },[patient])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, owner, email, admission, symptoms } = patientData;
@@ -23,7 +27,7 @@ const Form = ({ patients, setPatients, patient }) => {
       <h1 className='font-black text-3xl text-center'>Patients</h1>
       <p className='text-lg text-center mb-10'>
         Add and <span className='text-indigo-600 font-bold'>admin</span> patients
-      </p>
+      </p> 
 
       <form className=' bg-white shadow-md rounded-lg py-10 px-5 mb-10' onSubmit={handleSubmit}>
         {error && <Error msg='All fields must be completed' />}
